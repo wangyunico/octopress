@@ -2,10 +2,11 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
+url: http://andelf.github.io
+title: Andelf Blog
+subtitle: 我得把我那么多吐槽笔记都迁移过来别整到不靠谱的那堆上
 subtitle: A blogging framework for hackers.
-author: Your Name
+author: Andelf (ShuYu Wang)
 simple_search: https://www.google.com/search
 description:
 
@@ -19,7 +20,7 @@ date_format: "ordinal"
 subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
-email:
+email: andelf@gmail.com
 
 # ----------------------- #
 #    Jekyll & Plugins     #
