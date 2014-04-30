@@ -26,5 +26,5 @@ fn main() {
 
 DONE!
 
-``p.parse_token_tree()`` will return a TokenTree, which is a nested
+``p.parse_token_tree()`` will return a ``TokenTree``, which is a nested
 token list.
