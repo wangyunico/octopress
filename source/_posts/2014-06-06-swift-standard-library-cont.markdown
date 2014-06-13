@@ -6,13 +6,18 @@ comments: true
 categories: swift
 ---
 
+UPDATE: 我还真没用过 Xcode。
+输入 import Swift，按住 Command 鼠标点击 Swift。然后就出来了。 ORZ。 via reddit。
+
+不过那个列表是不全的，有部分影藏的还是要慢慢来。比如 NilType.
+
 通过命令行 lldb 命令获得相关信息。转载注明。
 
 所有默认名字在 Swift 名字空间，即 Swift.abs 这样。这里是第二部分，小写符号请参考，前一篇。
 
 ## 第二部分 A to Z
 
-### AbsoluteValuable
+### ``AbsoluteValuable``
 
 ```scala
 protocol AbsoluteValuable : SignedNumber {
@@ -20,22 +25,22 @@ protocol AbsoluteValuable : SignedNumber {
 }
 ```
 
-### Any
+### ``Any``
 ```scala
 typealias Any = protocol<>
 ```
 
-### AnyClass
+### ``AnyClass``
 ```scala
 typealias AnyClass = AnyObject.Type
 ```
 
-### AnyObject
+### ``AnyObject``
 ```scala
 @objc @class_protocol protocol AnyObject {}
 ```
 
-### Array
+### ``Array``
 ```scala
 struct Array<T> : MutableCollection, Sliceable {
   typealias Element = T
@@ -128,7 +133,7 @@ extension Array<T> {
 }
 ```
 
-### ArrayBound
+### ``ArrayBound``
 ```scala
 protocol ArrayBound {
   typealias ArrayBoundType
@@ -136,7 +141,7 @@ protocol ArrayBound {
 }
 ```
 
-### ArrayBuffer
+### ``ArrayBuffer``
 ```scala
 struct ArrayBuffer<T> : ArrayBufferType {
   var storage: NativeObject?
@@ -206,7 +211,7 @@ extension ArrayBuffer<T> {
 }
 ```
 
-### ArrayBufferType
+### ``ArrayBufferType``
 ```scala
 protocol ArrayBufferType : MutableCollection {
   typealias Element
@@ -228,7 +233,7 @@ protocol ArrayBufferType : MutableCollection {
 ```
 
 
-### ArrayLiteralConvertible
+### ``ArrayLiteralConvertible``
 ```scala
 protocol ArrayLiteralConvertible {
   typealias Element
@@ -236,7 +241,7 @@ protocol ArrayLiteralConvertible {
 }
 ```
 
-### ArrayType
+### ``ArrayType``
 ```scala
 protocol ArrayType : _ArrayType, ExtensibleCollection, MutableSliceable, ArrayLiteralConvertible {
   init()
@@ -271,7 +276,7 @@ protocol _ArrayType : Collection {
 }
 ```
 
-### AutoreleasingUnsafePointer
+### ``AutoreleasingUnsafePointer``
 ```scala
 struct AutoreleasingUnsafePointer<T> : Equatable, LogicValue {
   let value: RawPointer
@@ -290,7 +295,7 @@ struct AutoreleasingUnsafePointer<T> : Equatable, LogicValue {
 }
 ```
 
-### BidirectionalIndex
+### ``BidirectionalIndex``
 ```scala
 protocol BidirectionalIndex : ForwardIndex, _BidirectionalIndex {}
 ```
@@ -301,7 +306,7 @@ protocol _BidirectionalIndex : _ForwardIndex {
 }
 ```
 
-### Bit
+### ``Bit``
 ```scala
 enum Bit : Int, RandomAccessIndex {
   case zero
@@ -327,7 +332,7 @@ extension Bit : IntegerArithmetic {
 }
 ```
 
-### BitwiseOperations
+### ``BitwiseOperations``
 ```scala
 protocol BitwiseOperations {
   func &(_: Self, _: Self) -> Self
@@ -338,7 +343,7 @@ protocol BitwiseOperations {
 }
 ```
 
-### Bool
+### ``Bool``
 ```scala
 struct Bool {
   var value: Int1
@@ -371,27 +376,27 @@ extension Bool : Reflectable {
 }
 ```
 
-### CBool
+### ``CBool``
 ```scala
 typealias CBool = Bool
 ```
 
-### CChar
+### ``CChar``
 ```scala
 typealias CChar = Int8
 ```
 
-### CChar16
+### ``CChar16``
 ```scala
 typealias CChar16 = UInt16
 ```
 
-### CChar32
+### ``CChar32``
 ```scala
 typealias CChar32 = UnicodeScalar
 ```
 
-### CConstPointer
+### ``CConstPointer``
 ```scala
 struct CConstPointer<T> : Equatable {
   let owner: AnyObject?
@@ -405,7 +410,7 @@ struct CConstPointer<T> : Equatable {
 }
 ```
 
-### CConstVoidPointer
+### ``CConstVoidPointer``
 ```scala
 struct CConstVoidPointer : Equatable {
   let owner: AnyObject?
@@ -419,17 +424,17 @@ struct CConstVoidPointer : Equatable {
 }
 ```
 
-### CDouble
+### ``CDouble``
 ```scala
 typealias CDouble = Double
 ```
 
-### CFloat
+### ``CFloat``
 ```scala
 typealias CFloat = Float
 ```
 
-### Character
+### ``Character``
 ```scala
 enum Character : _BuiltinExtendedGraphemeClusterLiteralConvertible, ExtendedGraphemeClusterLiteralConvertible, Equatable {
   case LargeRepresentation(OnHeap<String>)
@@ -446,7 +451,7 @@ extension Character : Streamable {
 }
 ```
 
-### CharacterLiteralConvertible
+### ``CharacterLiteralConvertible``
 ```scala
 protocol CharacterLiteralConvertible {
   typealias CharacterLiteralType : _BuiltinCharacterLiteralConvertible
@@ -454,22 +459,22 @@ protocol CharacterLiteralConvertible {
 }
 ```
 
-### CInt
+### ``CInt``
 ```scala
 typealias CInt = Int32
 ```
 
-### CLong
+### ``CLong``
 ```scala
 typealias CLong = Int
 ```
 
-### CLongLong
+### ``CLongLong``
 ```scala
 typealias CLongLong = Int64
 ```
 
-### CMutablePointer
+### ``CMutablePointer``
 ```scala
 struct CMutablePointer<T> : Equatable, LogicValue {
   let owner: AnyObject?
@@ -488,7 +493,7 @@ struct CMutablePointer<T> : Equatable, LogicValue {
 }
 ```
 
-### CMutableVoidPointer
+### ``CMutableVoidPointer``
 ```scala
 struct CMutableVoidPointer : Equatable {
   let owner: AnyObject?
@@ -503,7 +508,7 @@ struct CMutableVoidPointer : Equatable {
 }
 ```
 
-### Collection
+### ``Collection``
 ```scala
 protocol Collection : _Collection, Sequence {
   subscript (i: Self.IndexType) -> Self.GeneratorType.Element { get }
@@ -511,7 +516,7 @@ protocol Collection : _Collection, Sequence {
 }
 ```
 
-### CollectionOfOne
+### ``CollectionOfOne``
 ```scala
 struct CollectionOfOne<T> : Collection {
   typealias IndexType = Bit
@@ -530,7 +535,7 @@ struct CollectionOfOne<T> : Collection {
 }
 ```
 
-### Comparable
+### ``Comparable``
 ```scala
 protocol Comparable : _Comparable, Equatable {
   func <=(lhs: Self, rhs: Self) -> Bool
@@ -545,7 +550,7 @@ protocol _Comparable {
 }
 ```
 
-### ContiguousArray
+### ``ContiguousArray``
 ```scala
 struct ContiguousArray<T> : MutableCollection, Sliceable {
   typealias Element = T
@@ -638,7 +643,7 @@ extension ContiguousArray<T> {
 }
 ```
 
-### ContiguousArrayBuffer
+### ``ContiguousArrayBuffer``
 ```scala
 struct ContiguousArrayBuffer<T> : ArrayBufferType, LogicValue {
   init(count: Int, minimumCapacity: Int)
@@ -700,7 +705,7 @@ extension ContiguousArrayBuffer<T> : Collection {
 }
 ```
 
-### ContiguousArrayStorage
+### ``ContiguousArrayStorage``
 ```scala
 @objc @final class ContiguousArrayStorage<T> : _NSSwiftArray {
   typealias Buffer = ContiguousArrayBuffer<T>
@@ -714,7 +719,7 @@ extension ContiguousArrayBuffer<T> : Collection {
 }
 ```
 
-### COpaquePointer
+### ``COpaquePointer``
 ```scala
 struct COpaquePointer : Equatable, Hashable, LogicValue {
   var value: RawPointer
@@ -741,17 +746,17 @@ extension COpaquePointer : CVarArg {
 }
 ```
 
-### CShort
+### ``CShort``
 ```scala
 typealias CShort = Int16
 ```
 
-### CSignedChar
+### ``CSignedChar``
 ```scala
 typealias CSignedChar = Int8
 ```
 
-### CString
+### ``CString``
 ```scala
 struct CString : _BuiltinExtendedGraphemeClusterLiteralConvertible, ExtendedGraphemeClusterLiteralConvertible, _BuiltinStringLiteralConvertible, StringLiteralConvertible, LogicValue {
   var _bytesPtr: UnsafePointer<UInt8>
@@ -781,32 +786,32 @@ extension CString : Streamable {
 }
 ```
 
-### CUnsignedChar
+### ``CUnsignedChar``
 ```scala
 typealias CUnsignedChar = UInt8
 ```
 
-### CUnsignedInt
+### ``CUnsignedInt``
 ```scala
 typealias CUnsignedInt = UInt32
 ```
 
-### CUnsignedLong
+### ``CUnsignedLong``
 ```scala
 typealias CUnsignedLong = UInt
 ```
 
-### CUnsignedLongLong
+### ``CUnsignedLongLong``
 ```scala
 typealias CUnsignedLongLong = UInt64
 ```
 
-### CUnsignedShort
+### ``CUnsignedShort``
 ```scala
 typealias CUnsignedShort = UInt16
 ```
 
-### CVaListPointer
+### ``CVaListPointer``
 ```scala
 struct CVaListPointer {
   var value: UnsafePointer<Void>
@@ -815,26 +820,26 @@ struct CVaListPointer {
 }
 ```
 
-### CVarArg
+### ``CVarArg``
 ```scala
 protocol CVarArg {
   func encode() -> Word[]
 }
 ```
 
-### CWideChar
+### ``CWideChar``
 ```scala
 typealias CWideChar = UnicodeScalar
 ```
 
-### DebugPrintable
+### ``DebugPrintable``
 ```scala
 protocol DebugPrintable {
   var debugDescription: String { get }
 }
 ```
 
-### Dictionary
+### ``Dictionary``
 ```scala
 struct Dictionary<KeyType : Hashable, ValueType> : Collection, DictionaryLiteralConvertible {
   typealias _Self = Dictionary<KeyType, ValueType>
@@ -890,7 +895,7 @@ extension Dictionary<KeyType, ValueType> : Reflectable {
 }
 ```
 
-### DictionaryGenerator
+### ``DictionaryGenerator``
 ```scala
 enum DictionaryGenerator<KeyType : Hashable, ValueType> : Generator {
   typealias _NativeIndex = _NativeDictionaryIndex<KeyType, ValueType>
@@ -904,7 +909,7 @@ enum DictionaryGenerator<KeyType : Hashable, ValueType> : Generator {
 }
 ```
 
-### DictionaryIndex
+### ``DictionaryIndex``
 ```scala
 enum DictionaryIndex<KeyType : Hashable, ValueType> : BidirectionalIndex {
   typealias _NativeIndex = _NativeDictionaryIndex<KeyType, ValueType>
@@ -926,7 +931,7 @@ enum DictionaryIndex<KeyType : Hashable, ValueType> : BidirectionalIndex {
 }
 ```
 
-### DictionaryLiteralConvertible
+### ``DictionaryLiteralConvertible``
 ```scala
 protocol DictionaryLiteralConvertible {
   typealias Key
@@ -935,7 +940,7 @@ protocol DictionaryLiteralConvertible {
 }
 ```
 
-### Double
+### ``Double``
 ```scala
 struct Double {
   var value: FPIEEE64
@@ -1044,7 +1049,7 @@ extension Double : CVarArg {
 }
 ```
 
-### EmptyCollection
+### ``EmptyCollection``
 ```scala
 struct EmptyCollection<T> : Collection {
   typealias IndexType = Int
@@ -1062,7 +1067,7 @@ struct EmptyCollection<T> : Collection {
 }
 ```
 
-### EmptyGenerator
+### ``EmptyGenerator``
 ```scala
 struct EmptyGenerator<T> : Generator, Sequence {
   func generate() -> EmptyGenerator<T>
@@ -1071,7 +1076,7 @@ struct EmptyGenerator<T> : Generator, Sequence {
 }
 ```
 
-### EnumerateGenerator
+### ``EnumerateGenerator``
 ```scala
 struct EnumerateGenerator<Base : Generator> : Generator, Sequence {
   typealias Element = (index: Int, element: Base.Element)
@@ -1084,14 +1089,14 @@ struct EnumerateGenerator<Base : Generator> : Generator, Sequence {
 }
 ```
 
-### Equatable
+### ``Equatable``
 ```scala
 protocol Equatable {
   func ==(lhs: Self, rhs: Self) -> Bool
 }
 ```
 
-### ExtendedGraphemeClusterLiteralConvertible
+### ``ExtendedGraphemeClusterLiteralConvertible``
 ```scala
 protocol ExtendedGraphemeClusterLiteralConvertible {
   typealias ExtendedGraphemeClusterLiteralType : _BuiltinExtendedGraphemeClusterLiteralConvertible
@@ -1099,12 +1104,12 @@ protocol ExtendedGraphemeClusterLiteralConvertible {
 }
 ```
 
-### ExtendedGraphemeClusterType
+### ``ExtendedGraphemeClusterType``
 ```scala
 typealias ExtendedGraphemeClusterType = String
 ```
 
-### ExtensibleCollection
+### ``ExtensibleCollection``
 ```scala
 protocol ExtensibleCollection : _ExtensibleCollection {
 }
@@ -1117,7 +1122,7 @@ protocol _ExtensibleCollection : Collection {
 }
 ```
 
-### FilterCollectionView
+### ``FilterCollectionView``
 ```scala
 struct FilterCollectionView<Base : Collection> : Collection {
   typealias IndexType = FilterCollectionViewIndex<Base>
@@ -1137,7 +1142,7 @@ struct FilterCollectionView<Base : Collection> : Collection {
 }
 ```
 
-### FilterCollectionViewIndex
+### ``FilterCollectionViewIndex``
 ```scala
 struct FilterCollectionViewIndex<Base : Collection> : ForwardIndex {
   func succ() -> FilterCollectionViewIndex<Base>
@@ -1149,7 +1154,7 @@ struct FilterCollectionViewIndex<Base : Collection> : ForwardIndex {
 }
 ```
 
-### FilterGenerator
+### ``FilterGenerator``
 ```scala
 struct FilterGenerator<Base : Generator> : Generator, Sequence {
   func next() -> Base.Element?
@@ -1160,7 +1165,7 @@ struct FilterGenerator<Base : Generator> : Generator, Sequence {
 }
 ```
 
-### FilterSequenceView
+### ``FilterSequenceView``
 ```scala
 struct FilterSequenceView<Base : Sequence> : Sequence {
   func generate() -> FilterGenerator<Base.GeneratorType>
@@ -1170,7 +1175,7 @@ struct FilterSequenceView<Base : Sequence> : Sequence {
 }
 ```
 
-### Float
+### ``Float``
 ```scala
 struct Float {
   var value: FPIEEE32
@@ -1279,17 +1284,17 @@ extension Float : CVarArg {
 }
 ```
 
-### Float32
+### ``Float32``
 ```scala
 typealias Float32 = Float
 ```
 
-### Float64
+### ``Float64``
 ```scala
 typealias Float64 = Double
 ```
 
-### Float80
+### ``Float80``
 ```scala
 struct Float80 {
   var value: FPIEEE80
@@ -1346,7 +1351,7 @@ extension Float80 : RandomAccessIndex {
 }
 ```
 
-### FloatingPointClassification
+### ``FloatingPointClassification``
 ```scala
 enum FloatingPointClassification {
   case SignalingNaN
@@ -1367,7 +1372,7 @@ extension FloatingPointClassification : Equatable {
 }
 ```
 
-### FloatingPointNumber
+### ``FloatingPointNumber``
 ```scala
 protocol FloatingPointNumber {
   typealias _BitsType
@@ -1388,7 +1393,7 @@ protocol FloatingPointNumber {
 }
 ```
 
-### FloatLiteralConvertible
+### ``FloatLiteralConvertible``
 ```scala
 protocol FloatLiteralConvertible {
   typealias FloatLiteralType : _BuiltinFloatLiteralConvertible
@@ -1396,12 +1401,12 @@ protocol FloatLiteralConvertible {
 }
 ```
 
-### FloatLiteralType
+### ``FloatLiteralType``
 ```scala
 typealias FloatLiteralType = Double
 ```
 
-### ForwardIndex
+### ``ForwardIndex``
 ```scala
 protocol ForwardIndex : _ForwardIndex {
   func ~>(start: Self, _: (_Distance, Self)) -> Self.DistanceType
@@ -1410,7 +1415,7 @@ protocol ForwardIndex : _ForwardIndex {
 }
 ```
 
-### Generator
+### ``Generator``
 ```scala
 protocol Generator {
   typealias Element
@@ -1418,7 +1423,7 @@ protocol Generator {
 }
 ```
 
-### GeneratorOf
+### ``GeneratorOf``
 ```scala
 struct GeneratorOf<T> : Generator, Sequence {
   init(_ next: () -> T?)
@@ -1429,7 +1434,7 @@ struct GeneratorOf<T> : Generator, Sequence {
 }
 ```
 
-### GeneratorOfOne
+### ``GeneratorOfOne``
 ```scala
 struct GeneratorOfOne<T> : Generator, Sequence {
   init(_ elements: T?)
@@ -1439,7 +1444,7 @@ struct GeneratorOfOne<T> : Generator, Sequence {
 }
 ```
 
-### GeneratorSequence
+### ``GeneratorSequence``
 ```scala
 struct GeneratorSequence<G : Generator> : Generator, Sequence {
   init(_ base: G)
@@ -1449,14 +1454,14 @@ struct GeneratorSequence<G : Generator> : Generator, Sequence {
 }
 ```
 
-### Hashable
+### ``Hashable``
 ```scala
 protocol Hashable : Equatable {
   var hashValue: Int { get }
 }
 ```
 
-### HeapBuffer
+### ``HeapBuffer``
 ```scala
 struct HeapBuffer<Value, Element> : LogicValue, Equatable {
   typealias Storage = HeapBufferStorage<Value, Element>
@@ -1495,7 +1500,7 @@ struct HeapBuffer<Value, Element> : LogicValue, Equatable {
 }
 ```
 
-### HeapBufferStorage
+### ``HeapBufferStorage``
 ```scala
 @objc class HeapBufferStorage<Value, Element> : HeapBufferStorageBase {
   typealias Buffer = HeapBuffer<Value, Element>
@@ -1505,7 +1510,7 @@ struct HeapBuffer<Value, Element> : LogicValue, Equatable {
 }
 ```
 
-### HeapBufferStorageBase
+### ``HeapBufferStorageBase``
 ```scala
 @objc class HeapBufferStorageBase {
   @objc deinit
@@ -1513,7 +1518,7 @@ struct HeapBuffer<Value, Element> : LogicValue, Equatable {
 }
 ```
 
-### ImplicitlyUnwrappedOptional
+### ``ImplicitlyUnwrappedOptional``
 ```scala
 struct ImplicitlyUnwrappedOptional<T> : LogicValue, Reflectable {
   var value: T?
@@ -1541,7 +1546,7 @@ extension ImplicitlyUnwrappedOptional<T> : _ConditionallyBridgedToObjectiveC {
 }
 ```
 
-### IndexingGenerator
+### ``IndexingGenerator``
 ```scala
 struct IndexingGenerator<C : _Collection> : Generator, Sequence {
   init(_ seq: C)
@@ -1552,7 +1557,7 @@ struct IndexingGenerator<C : _Collection> : Generator, Sequence {
 }
 ```
 
-### IndirectArrayBuffer
+### ``IndirectArrayBuffer``
 ```scala
 @final class IndirectArrayBuffer {
   init<T>(nativeBuffer: ContiguousArrayBuffer<T>, isMutable: Bool, needsElementTypeCheck: Bool)
@@ -1569,7 +1574,7 @@ struct IndexingGenerator<C : _Collection> : Generator, Sequence {
 }
 ```
 
-### Int
+### ``Int``
 ```scala
 struct Int : SignedInteger {
   var value: Word
@@ -1643,7 +1648,7 @@ extension Int : CVarArg {
 }
 ```
 
-### Int16
+### ``Int16``
 ```scala
 struct Int16 : SignedInteger {
   var value: Int16
@@ -1717,7 +1722,7 @@ extension Int16 : CVarArg {
 }
 ```
 
-### Int32
+### ``Int32``
 ```scala
 struct Int32 : SignedInteger {
   var value: Int32
@@ -1791,7 +1796,7 @@ extension Int32 : CVarArg {
 }
 ```
 
-### Int64
+### ``Int64``
 ```scala
 struct Int64 : SignedInteger {
   var value: Int64
@@ -1865,7 +1870,7 @@ extension Int64 : CVarArg {
 }
 ```
 
-### Int8
+### ``Int8``
 ```scala
 struct Int8 : SignedInteger {
   var value: Int8
@@ -1939,7 +1944,7 @@ extension Int8 : CVarArg {
 }
 ```
 
-### Integer
+### ``Integer``
 ```scala
 protocol Integer : _Integer, RandomAccessIndex {
 }
@@ -1948,7 +1953,7 @@ protocol _Integer : _BuiltinIntegerLiteralConvertible, IntegerLiteralConvertible
 }
 ```
 
-### IntegerArithmetic
+### ``IntegerArithmetic``
 ```scala
 protocol IntegerArithmetic : _IntegerArithmetic, Comparable {
   func +(lhs: Self, rhs: Self) -> Self
@@ -1960,7 +1965,7 @@ protocol IntegerArithmetic : _IntegerArithmetic, Comparable {
 }
 ```
 
-### IntegerLiteralConvertible
+### ``IntegerLiteralConvertible``
 ```scala
 protocol IntegerLiteralConvertible {
   typealias IntegerLiteralType : _BuiltinIntegerLiteralConvertible
@@ -1968,12 +1973,12 @@ protocol IntegerLiteralConvertible {
 }
 ```
 
-### IntegerLiteralType
+### ``IntegerLiteralType``
 ```scala
 typealias IntegerLiteralType = Int
 ```
 
-### IntEncoder
+### ``IntEncoder``
 ```scala
 struct IntEncoder : Sink {
   var asInt: UInt64
@@ -1984,12 +1989,12 @@ struct IntEncoder : Sink {
 }
 ```
 
-### IntMax
+### ``IntMax``
 ```scala
 typealias IntMax = Int64
 ```
 
-### Less
+### ``Less``
 ```scala
 struct Less<T : Comparable> {
   static func compare(x: T, _ y: T) -> Bool
@@ -1997,7 +2002,7 @@ struct Less<T : Comparable> {
 }
 ```
 
-### LifetimeManager
+### ``LifetimeManager``
 ```scala
 class LifetimeManager {
   var _managedRefs: NativeObject[]
@@ -2009,14 +2014,14 @@ class LifetimeManager {
 }
 ```
 
-### LogicValue
+### ``LogicValue``
 ```scala
 protocol LogicValue {
   func getLogicValue() -> Bool
 }
 ```
 
-### MapCollectionView
+### ``MapCollectionView``
 ```scala
 struct MapCollectionView<Base : Collection, T> : Collection {
   var startIndex: Base.IndexType {
@@ -2035,7 +2040,7 @@ struct MapCollectionView<Base : Collection, T> : Collection {
 }
 ```
 
-### MapSequenceGenerator
+### ``MapSequenceGenerator``
 ```scala
 struct MapSequenceGenerator<Base : Generator, T> : Generator, Sequence {
   func next() -> T?
@@ -2046,7 +2051,7 @@ struct MapSequenceGenerator<Base : Generator, T> : Generator, Sequence {
 }
 ```
 
-### MapSequenceView
+### ``MapSequenceView``
 ```scala
 struct MapSequenceView<Base : Sequence, T> : Sequence {
   func generate() -> MapSequenceGenerator<Base.GeneratorType, T>
@@ -2056,17 +2061,17 @@ struct MapSequenceView<Base : Sequence, T> : Sequence {
 }
 ```
 
-### MaxBuiltinFloatType
+### ``MaxBuiltinFloatType``
 ```scala
 typealias MaxBuiltinFloatType = FPIEEE64
 ```
 
-### MaxBuiltinIntegerType
+### ``MaxBuiltinIntegerType``
 ```scala
 typealias MaxBuiltinIntegerType = Int2048
 ```
 
-### Mirror
+### ``Mirror``
 ```scala
 protocol Mirror {
   var value: Any { get }
@@ -2080,7 +2085,7 @@ protocol Mirror {
 }
 ```
 
-### MirrorDisposition
+### ``MirrorDisposition``
 ```scala
 enum MirrorDisposition {
   case Struct
@@ -2099,21 +2104,21 @@ enum MirrorDisposition {
 }
 ```
 
-### MutableCollection
+### ``MutableCollection``
 ```scala
 protocol MutableCollection : Collection {
   subscript (i: Self.IndexType) -> Self.GeneratorType.Element { get set }
 }
 ```
 
-### MutableSliceable
+### ``MutableSliceable``
 ```scala
 protocol MutableSliceable : Sliceable, MutableCollection {
   subscript (_: Range<Self.IndexType>) -> Self.SliceType { get set }
 }
 ```
 
-### ObjectIdentifier
+### ``ObjectIdentifier``
 ```scala
 struct ObjectIdentifier : Hashable {
   let value: RawPointer
@@ -2125,7 +2130,7 @@ struct ObjectIdentifier : Hashable {
 }
 ```
 
-### OnHeap
+### ``OnHeap``
 ```scala
 struct OnHeap<T> {
   typealias Buffer = HeapBuffer<T, Void>
@@ -2135,7 +2140,7 @@ struct OnHeap<T> {
 }
 ```
 
-### Optional
+### ``Optional``
 This is the alias of Type? .
 ```scala
 enum Optional<T> : LogicValue, Reflectable {
@@ -2154,14 +2159,14 @@ extension Optional<T> : Printable {
 }
 ```
 
-### OutputStream
+### ``OutputStream``
 ```scala
 protocol OutputStream {
   func write(string: String)
 }
 ```
 
-### PermutationGenerator
+### ``PermutationGenerator``
 ```scala
 struct PermutationGenerator<C : Collection, Indices : Sequence where C.IndexType == C.IndexType> : Generator, Sequence {
   var seq: C
@@ -2174,14 +2179,14 @@ struct PermutationGenerator<C : Collection, Indices : Sequence where C.IndexType
 }
 ```
 
-### Printable
+### ``Printable``
 ```scala
 protocol Printable {
   var description: String { get }
 }
 ```
 
-### QuickLookObject
+### ``QuickLookObject``
 ```scala
 enum QuickLookObject {
   case Text(String)
@@ -2205,7 +2210,7 @@ enum QuickLookObject {
 }
 ```
 
-### RandomAccessIndex
+### ``RandomAccessIndex``
 ```scala
 protocol RandomAccessIndex : BidirectionalIndex, _RandomAccessIndex {}
 protocol _RandomAccessIndex : _BidirectionalIndex {
@@ -2214,7 +2219,7 @@ protocol _RandomAccessIndex : _BidirectionalIndex {
 }
 ```
 
-### Range
+### ``Range``
 ```scala
 struct Range<T : ForwardIndex> : LogicValue, Sliceable {
   @transparent init(start: T, end: T)
@@ -2244,7 +2249,7 @@ struct Range<T : ForwardIndex> : LogicValue, Sliceable {
 }
 ```
 
-### RangeGenerator
+### ``RangeGenerator``
 ```scala
 struct RangeGenerator<T : ForwardIndex> : Generator, Sequence {
   typealias Element = T
@@ -2257,7 +2262,7 @@ struct RangeGenerator<T : ForwardIndex> : Generator, Sequence {
 }
 ```
 
-### RawByte
+### ``RawByte``
 ```scala
 struct RawByte {
   let _inaccessible: UInt8
@@ -2265,14 +2270,14 @@ struct RawByte {
 }
 ```
 
-### RawOptionSet
+### ``RawOptionSet``
 ```scala
 protocol RawOptionSet : _RawOptionSet, LogicValue, Equatable {
   class func fromMask(raw: Self.RawType) -> Self
 }
 ```
 
-### RawRepresentable
+### ``RawRepresentable``
 ```scala
 protocol RawRepresentable {
   typealias RawType
@@ -2281,14 +2286,14 @@ protocol RawRepresentable {
 }
 ```
 
-### Reflectable
+### ``Reflectable``
 ```scala
 protocol Reflectable {
   func getMirror() -> Mirror
 }
 ```
 
-### Repeat
+### ``Repeat``
 ```scala
 struct Repeat<T> : Collection {
   typealias IndexType = Int
@@ -2308,7 +2313,7 @@ struct Repeat<T> : Collection {
 }
 ```
 
-### ReverseIndex
+### ``ReverseIndex``
 ```scala
 struct ReverseIndex<I : BidirectionalIndex> : BidirectionalIndex {
   var _base: I
@@ -2318,7 +2323,7 @@ struct ReverseIndex<I : BidirectionalIndex> : BidirectionalIndex {
 }
 ```
 
-### ReverseRange
+### ``ReverseRange``
 ```scala
 struct ReverseRange<T : BidirectionalIndex> : Sequence {
   init(start: T, pastEnd: T)
@@ -2331,7 +2336,7 @@ struct ReverseRange<T : BidirectionalIndex> : Sequence {
 }
 ```
 
-### ReverseRangeGenerator
+### ``ReverseRangeGenerator``
 ```scala
 struct ReverseRangeGenerator<T : BidirectionalIndex> : Generator, Sequence {
   typealias Element = T
@@ -2343,7 +2348,7 @@ struct ReverseRangeGenerator<T : BidirectionalIndex> : Generator, Sequence {
 }
 ```
 
-### ReverseView
+### ``ReverseView``
 ```scala
 struct ReverseView<T : Collection where T.IndexType : BidirectionalIndex> : Collection {
   typealias IndexType = ReverseIndex<T.IndexType>
@@ -2363,7 +2368,7 @@ struct ReverseView<T : Collection where T.IndexType : BidirectionalIndex> : Coll
 }
 ```
 
-### Sequence
+### ``Sequence``
 ```scala
 protocol Sequence : _Sequence_ {
   typealias GeneratorType : Generator
@@ -2374,7 +2379,7 @@ protocol Sequence : _Sequence_ {
 }
 ```
 
-### SequenceOf
+### ``SequenceOf``
 ```scala
 struct SequenceOf<T> : Sequence {
   init<G : Generator where T == T>(_ generate: () -> G)
@@ -2384,7 +2389,7 @@ struct SequenceOf<T> : Sequence {
 }
 ```
 
-### SignedInteger
+### ``SignedInteger``
 ```scala
 protocol SignedInteger : _SignedInteger, Integer {
 }
@@ -2394,7 +2399,7 @@ protocol _SignedInteger : _Integer, SignedNumber {
 }
 ```
 
-### SignedNumber
+### ``SignedNumber``
 ```scala
 protocol SignedNumber : _SignedNumber {
   func -(x: Self) -> Self
@@ -2402,7 +2407,7 @@ protocol SignedNumber : _SignedNumber {
 }
 ```
 
-### Sink
+### ``Sink``
 ```scala
 protocol Sink {
   typealias Element
@@ -2410,7 +2415,7 @@ protocol Sink {
 }
 ```
 
-### SinkOf
+### ``SinkOf``
 ```scala
 struct SinkOf<T> : Sink {
   init(_ put: (T) -> ())
@@ -2420,7 +2425,7 @@ struct SinkOf<T> : Sink {
 }
 ```
 
-### Slice
+### ``Slice``
 ```scala
 struct Slice<T> : MutableCollection, Sliceable {
   typealias Element = T
@@ -2513,7 +2518,7 @@ extension Slice<T> {
 }
 ```
 
-### Sliceable
+### ``Sliceable``
 ```scala
 protocol Sliceable : _Sliceable {
   typealias SliceType : _Sliceable
@@ -2521,7 +2526,7 @@ protocol Sliceable : _Sliceable {
 }
 ```
 
-### SliceBuffer
+### ``SliceBuffer``
 ```scala
 struct SliceBuffer<T> : ArrayBufferType {
   typealias Element = T
@@ -2576,7 +2581,7 @@ struct SliceBuffer<T> : ArrayBufferType {
 }
 ```
 
-### StaticString
+### ``StaticString``
 ```scala
 struct StaticString : _BuiltinExtendedGraphemeClusterLiteralConvertible, ExtendedGraphemeClusterLiteralConvertible, _BuiltinStringLiteralConvertible, StringLiteralConvertible {
   var start: RawPointer
@@ -2591,14 +2596,14 @@ struct StaticString : _BuiltinExtendedGraphemeClusterLiteralConvertible, Extende
 }
 ```
 
-### Streamable
+### ``Streamable``
 ```scala
 protocol Streamable {
   func writeTo<Target : OutputStream>(inout target: Target)
 }
 ```
 
-### StridedRangeGenerator
+### ``StridedRangeGenerator``
 ```scala
 struct StridedRangeGenerator<T : ForwardIndex> : Generator, Sequence {
   typealias Element = T
@@ -2611,7 +2616,7 @@ struct StridedRangeGenerator<T : ForwardIndex> : Generator, Sequence {
 }
 ```
 
-### String
+### ``String``
 ```scala
 struct String {
   init()
@@ -2878,7 +2883,7 @@ extension String {
 }
 ```
 
-### StringElement
+### ``StringElement``
 ```scala
 protocol StringElement {
   class func toUTF16CodeUnit(_: Self) -> CodeUnit
@@ -2886,7 +2891,7 @@ protocol StringElement {
 }
 ```
 
-### StringInterpolationConvertible
+### ``StringInterpolationConvertible``
 ```scala
 protocol StringInterpolationConvertible {
   class func convertFromStringInterpolation(strings: Self...) -> Self
@@ -2894,7 +2899,7 @@ protocol StringInterpolationConvertible {
 }
 ```
 
-### StringLiteralConvertible
+### ``StringLiteralConvertible``
 ```scala
 protocol StringLiteralConvertible : ExtendedGraphemeClusterLiteralConvertible {
   typealias StringLiteralType : _BuiltinStringLiteralConvertible
@@ -2902,12 +2907,12 @@ protocol StringLiteralConvertible : ExtendedGraphemeClusterLiteralConvertible {
 }
 ```
 
-### StringLiteralType
+### ``StringLiteralType``
 ```scala
 typealias StringLiteralType = String
 ```
 
-### UInt
+### ``UInt``
 ```scala
 struct UInt : UnsignedInteger {
   var value: Word
@@ -2977,7 +2982,7 @@ extension UInt : CVarArg {
 }
 ```
 
-### UInt16
+### ``UInt16``
 ```scala
 struct UInt16 : UnsignedInteger {
   var value: Int16
@@ -3054,7 +3059,7 @@ extension UInt16 : CVarArg {
 }
 ```
 
-### UInt32
+### ``UInt32``
 ```scala
 struct UInt32 : UnsignedInteger {
   var value: Int32
@@ -3130,7 +3135,7 @@ extension UInt32 : CVarArg {
 }
 ```
 
-### UInt64
+### ``UInt64``
 ```scala
 struct UInt64 : UnsignedInteger {
   var value: Int64
@@ -3206,7 +3211,7 @@ extension UInt64 : CVarArg {
 }
 ```
 
-### UInt8
+### ``UInt8``
 ```scala
 struct UInt8 : UnsignedInteger {
   var value: Int8
@@ -3286,12 +3291,12 @@ extension UInt8 : CVarArg {
 }
 ```
 
-### UIntMax
+### ``UIntMax``
 ```scala
 typealias UIntMax = UInt64
 ```
 
-### UnicodeCodec
+### ``UnicodeCodec``
 ```scala
 protocol UnicodeCodec {
   typealias CodeUnit
@@ -3300,7 +3305,7 @@ protocol UnicodeCodec {
 }
 ```
 
-### UnicodeScalar
+### ``UnicodeScalar``
 ```scala
 struct UnicodeScalar : ExtendedGraphemeClusterLiteralConvertible {
   var _value: Int32
@@ -3347,7 +3352,7 @@ extension UnicodeScalar {
 }
 ```
 
-### Unmanaged
+### ``Unmanaged``
 ```scala
 struct Unmanaged<T> {
   var _value: @sil_unmanaged T
@@ -3364,7 +3369,7 @@ struct Unmanaged<T> {
 }
 ```
 
-### UnsafeArray
+### ``UnsafeArray``
 ```scala
 struct UnsafeArray<T> : Collection, Generator {
   var startIndex: Int {
@@ -3384,7 +3389,7 @@ struct UnsafeArray<T> : Collection, Generator {
 }
 ```
 
-### UnsafePointer
+### ``UnsafePointer``
 ```scala
 struct UnsafePointer<T> : BidirectionalIndex, Comparable, Hashable, LogicValue {
   var value: RawPointer
@@ -3440,12 +3445,12 @@ extension UnsafePointer<T> : Printable {
 }
 ```
 
-### UnsignedInteger
+### ``UnsignedInteger``
 ```scala
 protocol UnsignedInteger : _UnsignedInteger, Integer {}
 ```
 
-### UTF16
+### ``UTF16``
 ```scala
 struct UTF16 : UnicodeCodec {
   typealias CodeUnit = UInt16
@@ -3464,7 +3469,7 @@ extension UTF16 {
 }
 ```
 
-### UTF32
+### ``UTF32``
 ```scala
 struct UTF32 : UnicodeCodec {
   typealias CodeUnit = UInt32
@@ -3477,7 +3482,7 @@ struct UTF32 : UnicodeCodec {
 }
 ```
 
-### UTF8
+### ``UTF8``
 ```scala
 struct UTF8 : UnicodeCodec {
   typealias CodeUnit = UInt8
@@ -3489,12 +3494,12 @@ struct UTF8 : UnicodeCodec {
 }
 ```
 
-### UWord
+### ``UWord``
 ```scala
 typealias UWord = UInt
 ```
 
-### VaListBuilder
+### ``VaListBuilder``
 ```scala
 @final class VaListBuilder {
   struct Header {
@@ -3516,17 +3521,17 @@ typealias UWord = UInt
 }
 ```
 
-### Void
+### ``Void``
 ```scala
 typealias Void = ()
 ```
 
-### Word
+### ``Word``
 ```scala
 typealias Word = Int
 ```
 
-### Zip2
+### ``Zip2``
 ```scala
 struct Zip2<S0 : Sequence, S1 : Sequence> : Sequence {
   typealias Stream1 = S0.GeneratorType
@@ -3538,7 +3543,7 @@ struct Zip2<S0 : Sequence, S1 : Sequence> : Sequence {
 }
 ```
 
-### ZipGenerator2
+### ``ZipGenerator2``
 ```scala
 struct ZipGenerator2<E0 : Generator, E1 : Generator> : Generator {
   typealias Element = (E0.Element, E1.Element)
@@ -3548,19 +3553,19 @@ struct ZipGenerator2<E0 : Generator, E1 : Generator> : Generator {
 }
 ```
 
-### C_ARGC: CInt
+### ``C_ARGC: CInt``
 
-### C_ARGV: UnsafePointer<CString>
+### ``C_ARGV: UnsafePointer<CString>``
 
-### __COLUMN__: Int
+### ``__COLUMN__: Int``
 
 Current column.
 
-### __FILE__: String
+### ``__FILE__: String``
 
 Current file name.
 
-### __LINE__: Int
+### ``__LINE__: Int``
 
 Current line.
 

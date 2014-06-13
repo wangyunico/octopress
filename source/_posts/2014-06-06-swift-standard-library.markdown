@@ -8,9 +8,11 @@ categories: swift
 
 所有默认函数在 Swift 名字空间，即 Swift.abs 这样。
 
+所有的函数功能都是我猜的。猜错别找我。
+
 ## 第一部分 a to z
 
-### abs
+### ``abs``
 ```
 abs(x: T) -> T
 ```
@@ -19,7 +21,7 @@ abs(x: T) -> T
 
     abs(-20.3)
     
-### advance
+### ``advance``
 
 ```
 advance(start: T, n: T.DistanceType) -> T
@@ -31,7 +33,7 @@ advance(start: T, n: T.DistanceType, end: T) -> T
     advance(0, 20) // 20
     advance(2, 20, 4) // 4
 
-### alignof alignofValue
+### ``alignof alignofValue``
 
 ```
 alignof(T.Type) -> Int
@@ -46,22 +48,23 @@ alignof(Uint8)
 alignofValue(Float(3.2))    
 ```
 
-### assert
+### ``assert``
 
 ```
 assert(condition: @auto_closure () -> Bool, message: StaticString, file: StaticString, line: UWord) -> Void
 assert(condition: @auto_closure () -> T, message: StaticString, file: StaticString, line: UWord) -> Void
 ```
 
-断言语句。
+断言语句。因为是 @auto_closure, 所以直接写语句就可以了，第二个 T 的限制是 LogicValue, 所以 Optional 也可以。
 
 ```
 let age = 17
 assert(age > 0, "Alive Only")
 assert(age > 18, "Adult Only", file: __FILE__, line: __LINE__)
+assert("342345".toInt())
 ```
 
-### bridge*
+### ``bridge*``
 ```
 bridgeFromObjectiveC(x: AnyObject, T.Type) -> T?
 bridgeFromObjectiveCUnconditional(x: AnyObject, T.Type) -> T
@@ -69,15 +72,15 @@ bridgeToObjectiveC(x: T) -> AnyObject?
 bridgeToObjectiveCUnconditional(x: T) -> AnyObject
 ```
 
-### c_malloc_size
+### ``c_malloc_size``
 
     c_malloc_size(heapMemory: UnsafePointer<Void>) -> Int
     
-### c_memcpy
+### ``c_memcpy``
 
     c_memcpy(dest: UnsafePointer<Void>, src: UnsafePointer<Void>, size: UInt) -> Void
     
-### c_putchar(value: Int32) -> Void
+### ``c_putchar(value: Int32) -> Void``
 
     c_putchar(value: Int32) -> Void
     
@@ -85,7 +88,7 @@ bridgeToObjectiveCUnconditional(x: T) -> AnyObject
     
     c_putchar(97) // ASCII 'a'
     
-### contains
+### ``contains``
 
 ```
 contains(seq: S, predicate: (S.GeneratorType.Element) -> L) -> Bool
@@ -100,7 +103,7 @@ contains(a, { $0 > 50 }) // true
 contains(a, 56)
 ```
 
-### count countElements
+### ``count countElements``
 
 ```
 count(r: Range<I>) -> I.DistanceType
@@ -115,7 +118,7 @@ let a = [1,2,4,56,7]
 countElements(a) // 5
 ```
 
-### countLeadingZeros
+### ``countLeadingZeros``
 
     countLeadingZeros(value: Int64) -> Int64
     
@@ -127,7 +130,7 @@ countLeadingZeros(1) // 63
 countLeadingZeros(-1) // 0
 ```
 
-### debugPrint debugPrintln
+### ``debugPrint debugPrintln``
 
 ```
 debugPrint(object: T) -> Void
@@ -138,7 +141,7 @@ debugPrintln(object: T, &target: TargetStream) -> Void
 
 打印任意对象。``TargetStream`` 暂时未知。
 
-### distance
+### ``distance``
 
     distance(start: T, end: T) -> T.DistanceType
 
@@ -146,7 +149,7 @@ debugPrintln(object: T, &target: TargetStream) -> Void
 
     distance(1, 20) // 19
 
-### dropFirst dropLast
+### ``dropFirst dropLast``
 
 ```
 dropFirst(seq: Seq) -> Seq.SliceType
@@ -164,7 +167,7 @@ dropLast(b)
 // r17 : Slice<Int> = [1, 2, 3, 4]
 ```
 
-### dump
+### ``dump``
 ```
 dump(x: T, name: String?, indent: Int, maxDepth: Int, maxItems: Int) -> T
 dump(x: T, name: String?, indent: Int, maxDepth: Int, maxItems: Int, &targetStream: TargetStream) -> T
@@ -179,7 +182,7 @@ dump(b, name: "A Array B")
 dump("Hello World")
 ```
 
-### encodeBitsAsWords
+### ``encodeBitsAsWords``
 
     encodeBitsAsWords(x: T) -> Word[]
     
@@ -187,7 +190,7 @@ dump("Hello World")
     
     encodeBitsAsWords(97) // [97]: Word[]
     
-### enumerate
+### ``enumerate``
 
     enumerate(seq: Seq) -> EnumerateGenerator<Seq.GeneratorType>
 
@@ -198,7 +201,7 @@ let b = [1,2,3,4,5]
 for (idx, val) in enumerate(b) { println("b \(idx) = \(val)") }
 ```
 
-### equal
+### ``equal``
 
 ```
 equal(a1: S1, a2: S2) -> Bool
@@ -212,7 +215,7 @@ equal(2, 1+1)
 equal([1,2,3,4], [2,4,6,8], { $0 * 2 == $1 })
 ```
 
-### fatalError
+### ``fatalError``
 
     fatalError(message: StaticString, file: StaticString, line: UWord) -> Void
 
@@ -220,7 +223,7 @@ Runtime fatal error. then quit.
     
     fatalError("Taylor Swift Sucks")
 
-### filter
+### ``filter``
 
 ```
 filter(source: C, includeElement: (C.GeneratorType.Element) -> Bool) -> FilterCollectionView<C>
@@ -235,7 +238,7 @@ for i in filter(b, { $0 > 3 }) { println("got \(i)") }
 for i in filter(1...100, { $0 % 17 == 0 }) { println("got \(i)") }
 ```
 
-### find
+### ``find``
 
     find(domain: C, value: C.GeneratorType.Element) -> C.IndexType?
     
@@ -247,15 +250,15 @@ find(b, 20) // nil
 find(b, 2)  // 1
 ```
 
-### getBridgedObjectiveCType
+### ``getBridgedObjectiveCType``
 
     getBridgedObjectiveCType(T.Type) -> Any.Type?
     
-### getVaList
+### ``getVaList``
 
     getVaList(args: CVarArg[]) -> CVaListPointer
     
-### indices
+### ``indices``
 
     indices(seq: Seq) -> Range<Seq.IndexType>
 
@@ -267,7 +270,7 @@ for i in indices(b) { println(i) }
 // 0 1 2 3 4
 ```
 
-### insertionSort
+### ``insertionSort``
 
 ```
 insertionSort(&elements: C, range: Range<C.IndexType>) -> Void
@@ -282,18 +285,18 @@ insertionSort(&tt, 0..5)
 println(tt)
 ```
 
-### isBridgedToObjectiveC isBridgedVerbatimToObjectiveC
+### ``isBridgedToObjectiveC isBridgedVerbatimToObjectiveC``
 
 ```
 isBridgedToObjectiveC(T.Type) -> Bool
 isBridgedVerbatimToObjectiveC(T.Type) -> Bool
 ```
 
-### isUniquelyReferenced
+### ``isUniquelyReferenced``
 
     isUniquelyReferenced(&x: T) -> Bool    
     
-### join
+### ``join``
 
     func join<C : ExtensibleCollection, S : Sequence where C == C>(separator: C, elements: S) -> C
 
@@ -301,14 +304,14 @@ isBridgedVerbatimToObjectiveC(T.Type) -> Bool
 
     join("!!", ["Hello", "World"])
    
-### lexicographicalCompare
+### ``lexicographicalCompare``
 
 ```
 lexicographicalCompare(a1: S1, a2: S2) -> Bool
 lexicographicalCompare(a1: S1, a2: S2, less: (S1.GeneratorType.Element, S1.GeneratorType.Element) -> Bool) -> Bool
 ```
 
-### map
+### ``map``
 
 ```
 map(source: C, transform: (C.GeneratorType.Element) -> T) -> MapCollectionView<C, T>
@@ -324,7 +327,7 @@ let optVal: Int? = 250
 let v: Int? =  map(optVal, { $0 + 1 }) // 251
 ```
 
-### max maxElement
+### ``max maxElement``
 
 ```
 max(x: T, y: T, rest: T[]) -> T
@@ -339,7 +342,7 @@ max(1,2,4,5,6,100,4,5,6,7) // 100
 maxElement([1,2,4,5,6,100,4,5,6,7])
 ```
 
-### min minElement
+### ``min minElement``
 
 ```
 min(x: T, y: T, rest: T[]) -> T
@@ -348,7 +351,7 @@ minElement(range: R) -> R.GeneratorType.Element
 
 最小值。Same usage as ``max``
 
-### numericCast
+### ``numericCast``
 
     numericCast(x: T) -> U
 
@@ -359,7 +362,7 @@ let bb: UInt8 = 20
 let cc: Int = numericCast(bb)
 ```
 
-### partition
+### ``partition``
 
 ```
 partition(&elements: C, range: Range<C.IndexType>) -> C.IndexType
@@ -373,14 +376,14 @@ var tt = [12, 23, 34, 45, 56, 67, 78, 89, 90]
 println(partition(&tt, 3..4))
 ```
 
-### posix_read posix_write
+### ``posix_read posix_write``
 
 ```
 posix_read(fd: Int32, buf: RawPointer, sz: Int) -> Int
 posix_write(fd: Int32, buf: RawPointer, sz: Int) -> Int
 ```
 
-### print println
+### ``print println``
 
 ```
 print(object: T) -> Void
@@ -392,7 +395,7 @@ println(object: T, &target: TargetStream) -> Void
 
 打印语句，们。
 
-### quickSort
+### ``quickSort``
 
 ```
 quickSort(&elements: C, range: Range<C.IndexType>) -> Void
@@ -407,7 +410,7 @@ quickSort(&tt, 0..5)
 quickSort(&tt, 0..5, { $1 < $0 }) // 逆序
 ``` 
 
-### reduce
+### ``reduce``
 
     reduce(sequence: S, initial: U, combine: (U, S.GeneratorType.Element) -> U) -> U
     
@@ -419,13 +422,13 @@ let tt = [23, 34, 56, 45, 67, 12, 78, 89, 90]
 reduce(tt, 0, { $0 + $1 })
 ```
 
-### reflect 
+### ``reflect ``
 
     reflect(x: T) -> Mirror
     
 暂时未知
 
-### reinterpretCast
+### ``reinterpretCast``
 
     reinterpretCast(x: T) -> U
 
@@ -438,7 +441,7 @@ println(c)
 println(UInt.max) // 一定等于 c 。别问我为什么。
 ```
 
-### reverse
+### ``reverse``
 
     reverse(source: C) -> ReverseView<C>
    
@@ -449,7 +452,7 @@ let tt = [23, 34, 56, 45, 67, 12, 78, 89, 90]
 for i in reverse(tt) { println(i) }
 ```
     
-### roundUpToAlignment
+### ``roundUpToAlignment``
 
     roundUpToAlignment(offset: Int, alignment: Int) -> Int
     
@@ -460,7 +463,7 @@ roundUpToAlignment(2, 4) // 4
 roundUpToAlignment(5, 4) // 8
 ```
 
-### sizeof sizeofValue
+### ``sizeof sizeofValue``
 
 ```
 sizeof(T.Type) -> Int
@@ -474,7 +477,7 @@ sizeof(Int)
 sizeofValue(2.4)  // a Double
 ```
 
-### sort
+### ``sort``
 
 ```
 sort(array: T[]) -> T[]
@@ -489,7 +492,7 @@ sort(foo)
 sort(foo, { String($0) < String($1) }) // 按照 ASCII 顺序排序
 ```
 
-### split
+### ``split``
 
     split(seq: Seq, isSeparator: (Seq.GeneratorType.Element) -> R, maxSplit: Int, allowEmptySlices: Bool) -> Seq.SliceType[]
     
@@ -500,7 +503,7 @@ split("Hello World", { $0 == " " })
 // : String[] = ["Hello", "World"]
 ```
 
-### startsWith
+### ``startsWith``
     
     startsWith(s0: S0, s1: S1) -> Bool
     
@@ -511,7 +514,7 @@ startsWith(1..100, 1..2)
 startsWith("Hello World", "Hel")
 ```
 
-### strideof strideofValue
+### ``strideof strideofValue``
 
 ```
 strideof(T.Type) -> Int
@@ -520,7 +523,7 @@ strideofValue(T) -> Int
 
 计算内存 stride 。用法同 sizeof sizeofValue。
 
-### swap
+### ``swap``
 
     swap(&a: T, &b: T) -> Void
    
@@ -531,7 +534,7 @@ var a = 1, b = 2
 swap(&a, &b)
 ```
 
-### swift_*
+### ``swift_*``
 
 ```
 swift_bufferAllocate(bufferType: HeapBufferStorageBase.Type, size: Int, alignMask: Int) -> AnyObject
@@ -539,13 +542,13 @@ swift_keepAlive(&T) -> Void
 swift_MagicMirrorData_summaryImpl(metadata: Any.Type, result: UnsafePointer<String>) -> Void
 ```
 
-### toString
+### ``toString``
 
     toString(object: T) -> String
     
 这个没啥好说的。就是 toString。例子我都懒得举。
     
-### transcode
+### ``transcode``
 
 ```
 transcode(inputEncoding: Encoding.Type, outputEncoding: Encoding.Type, input: Input, output: Output) -> Void
@@ -554,7 +557,7 @@ transcode(inputEncoding: InputEncoding.Type, outputEncoding: OutputEncoding.Type
 
 未知。
 
-### underestimateCount
+### ``underestimateCount``
 
     underestimateCount(x: T) -> Int
     
@@ -564,21 +567,21 @@ transcode(inputEncoding: InputEncoding.Type, outputEncoding: OutputEncoding.Type
 underestimateCount(1..1000)
 ```
     
-### unsafeReflect    
+### ``unsafeReflect    ``
     
     unsafeReflect(owner: NativeObject, ptr: UnsafePointer<T>) -> Mirror
 
 未知。
 
-### withExtendedLifetime
+### ``withExtendedLifetime``
 
     withExtendedLifetime(x: T, f: (T) -> Result) -> Result
 
-### withObjectAtPlusZero
+### ``withObjectAtPlusZero``
 
     withObjectAtPlusZero(x: AnyObject, f: (COpaquePointer) -> Result) -> Result
     
-### withUnsafePointer withUnsafePointers withUnsafePointerToObject
+### ``withUnsafePointer withUnsafePointers withUnsafePointerToObject``
 
 ```
 withUnsafePointer(&arg: T, body: (UnsafePointer<T>) -> Result) -> Result
@@ -589,7 +592,7 @@ withUnsafePointerToObject(&arg: T?, body: (UnsafePointer<ImplicitlyUnwrappedOpti
 
 来自 Rust 的同学对这里一定不会太陌生。不过作用和使用场合未知。
 
-### withVaList
+### ``withVaList``
 
 ```
 withVaList(args: CVarArg[], f: (CVaListPointer) -> R) -> R
