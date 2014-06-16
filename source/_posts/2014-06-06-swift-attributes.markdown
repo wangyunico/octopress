@@ -30,7 +30,11 @@ int println() { .... }
 c_println() // 调用
 ```
 
-也就是 C 中的同名函数，我们可以给赋予一个别名，然后正常调用。这么一看就基本没有问题了。
+也就是 C 中的同名函数，我们可以给赋予一个别名，然后正常调用。
+
+同时也用于指定 Swift 导出符号的名字，用于在 C 语言调用。
+
+详细参考 [简析Swift和C的交互](http://andelf.github.io/blog/2014/06/15/swift-and-c-interop/)
 
 ## @transparent
 用在函数、方法定义前，根据 lldb 和 llvm ir 猜测，作用相当于 inline。内联函数。
@@ -79,7 +83,6 @@ simpleAssert(testNumber % 2 == 0, "testNumber isn't an even number.")
 
 ## @IBAction, @IBDesignable, @IBInspectable, and @IBOutlet
 同 Objective-C
-
 
 ## @objc @objc(name:name:)
 参考文档。

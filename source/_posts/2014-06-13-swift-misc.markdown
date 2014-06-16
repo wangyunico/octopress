@@ -101,8 +101,6 @@ br l // breakpoint list
 
 br dis 1 // breakpoint disable 1
 
-
-
 ### Infos 
 
 The stop reason tells you what happened
@@ -113,7 +111,6 @@ The stop reason tells you what happened
 
 The stack tells you how it happened
 The expression command helps you inspect variables
-
 
 ## swift-demangle
 
