@@ -95,6 +95,8 @@ simpleAssert(testNumber % 2 == 0, "testNumber isn't an even number.")
 
 ## @optional
 
+## @UIApplicationMain
+
 ## @NSManaged
 
 ## @NSCopying
@@ -111,6 +113,51 @@ e.g.
 
 @exported import ModName
 
+## @sil_weak
+## @sil_unowned
 ## @sil_unmanaged
 
 猜测是语言内部表示一个属性禁用 ARC？
+
+Safety Integrity Level
+
+## @sil_self
+
+## @opened(...)
+
+## @cc(...)
+
+## @autoreleased
+
+
+## @objc_metatype
+
+## @LLDBDebuggerFunction
+## @requires_stored_property_inits
+
+```
+@requires_stored_property_inits class Point {
+  ...
+```
+## only in sil modules
+
+- @callee_unowned
+- @callee_owned
+- @callee_guaranteed
+- @guaranteed
+- @out
+- @thin
+- @thick
+- @owned
+
+## unused 
+
+这里可以看到一些 Swift 的历史变迁。4 年也不算很短。
+
+- @lvalue
+- @unchecked
+  - '@unchecked T?' syntax is going away, use 'T!'
+- @inout
+  - @inout is no longer an attribute 应该是现在的 inout 关键字
+- @unowned
+  - '@unowned' is not an attribute, use the 'unowned' keyword instead

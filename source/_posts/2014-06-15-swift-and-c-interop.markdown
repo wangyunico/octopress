@@ -130,7 +130,9 @@ c_println() // 调用
 继续这个列表，你肯定会想这么多数值类型，怎么搞。其实大都是被 ``typealias`` 定义到 ``UInt8``，``Double`` 这些的。放心。C 中数值类型全部被明确地用别名定义到带 size 的 Swift 数值类型上。完全是一样用的。
 
 其实真正的 Pointer 类型只是 ``UnsafePointer<T>``，大小与 C 保证一致，而对于这里不同类型的 Pointer，其实都是 ``UnsafePointer``
-到它们的隐式类型转换。还有个指针相关类型是 ``COpaquePointer``，不过没试验怎么用。
+到它们的隐式类型转换。~~还有个指针相关类型是 ``COpaquePointer``，不过没试验怎么用~~。
+
+UPDATE: 我们在调用的时候，更多地用到 ``COpaquePointer``，我将再坑一篇介绍它。
 
 同时 ``NilType``，也就是 ``nil`` 有到这些指针的隐式类型转换。所以可以当做任何一种指针的 ``NULL`` 用。
 
@@ -236,7 +238,9 @@ int some_func() {
 }
 ```
 
-当然这里的 extern 一行是可选的，因为实际上声明会存在于 ProjectName-Swift.h 中，只是为了避免首次编译警告而已（第二次以后的编译，其实这个 Header 已经被缓存起来了，这个牵扯到 Xcode 的编译过程）。
+~~当然这里的 extern 一行是可选的，因为实际上声明会存在于 ProjectName-Swift.h 中，只是为了避免首次编译警告而已（第二次以后的编译，其实这个 Header 已经被缓存起来了，这个牵扯到 Xcode 的编译过程）。~~ 错了。
+
+对于函数而言 extern 必须手动加上，对于 class  、 protocol ，会在生成的头文件里。
 
 按照这个思路，其实很容易实现 Swift 调用 C 中调用了 Swift 函数的函数。这意味着，可以通过简单的方法封装支持向 C 传递 Swift block 作为回调函数。难度中上，对于有过类似扩展编写经验的人来说很简单。
 
