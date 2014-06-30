@@ -3,7 +3,7 @@ layout: post
 title: "Swift and C Interop(简析Swift和C的交互)"
 date: 2014-06-15 00:11:44 +0800
 comments: true
-categories: swift
+categories: swift swift-interop
 ---
 
 声明： 转载注明我或者 SwiftChina . [weibo](http://weibo.com/234632333)

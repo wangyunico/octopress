@@ -82,7 +82,7 @@ enum MirrorDisposition {
 
 ```
 let mir = reflect(someVal)
-swift mir.valueType {
+swith mir.valueType {
 case _ as String.Type:
     println("type = string")
 case _ as Range<Int>.Type:

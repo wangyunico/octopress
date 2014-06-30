@@ -3,7 +3,7 @@ layout: post
 title: "Swift and ObjectiveC Interop (Swift 与 Objective-C 之间的交互)"
 date: 2014-06-11 20:01:11 +0800
 comments: true
-categories: swift
+categories: swift swift-interop
 ---
 
 主要介绍原有 Objective-C 中的一些类型在 Swift 中的操作问题。差不多就能知道，你在 Swift 如何对 Objective-C (Foundation) 原生类型进行操作以及和 Swift 类型互转。

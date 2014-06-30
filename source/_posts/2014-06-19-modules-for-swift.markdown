@@ -3,7 +3,7 @@ layout: post
 title: "Module System of Swift (简析 Swift 的模块系统)"
 date: 2014-06-19 15:14:31 +0800
 comments: true
-categories: swift
+categories: swift swift-module
 ---
 
 声明： 转载注明我或者 SwiftChina, 请在方便的情况下情尽量告知. [weibo](http://weibo.com/234632333)

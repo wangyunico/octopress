@@ -3,7 +3,7 @@ layout: post
 title: "Swift and ObjectiveC Interop Cont. (Swift 与 Objective-C 之间的交互，续坑)"
 date: 2014-06-12 17:10:28 +0800
 comments: true
-categories: swift
+categories: swift swift-interop
 ---
 
 ## 关于 ``_ConditionallyBridgedToObjectiveC``

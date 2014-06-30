@@ -3,7 +3,7 @@ layout: post
 title: "Use CocoaPods with Swift (在 Swift 中使用 CocoaPods） "
 date: 2014-06-23 20:15:39 +0800
 comments: true
-categories: swift
+categories: swift swift-module
 ---
 声明： 转载注明我或者 SwiftChina 。请在方便的情况下情尽量告知. [weibo](http://weibo.com/234632333)
 

@@ -3,7 +3,7 @@ layout: post
 title: "Write Swift Module Cont. Static Library （使用 Swift 创建 Swift 模块 - 静态链接库）"
 date: 2014-06-25 21:20:55 +0800
 comments: true
-categories: swift
+categories: swift swift-module
 ---
 声明： 转载注明我或者 SwiftChina, 请在方便的情况下情尽量告知. [weibo](http://weibo.com/234632333)
 

@@ -42,11 +42,13 @@ while let x = __g.next() {
     ...
 }}
 ```
-## IntegerLiteralConvertible
-## FloatLiteralConvertible
-## StringLiteralConvertible
-## ArrayLiteralConvertible
-## DictionaryLiteralConvertible
+## *Convertible
+
+- IntegerLiteralConvertible
+- FloatLiteralConvertible
+- StringLiteralConvertible
+- ArrayLiteralConvertible
+- DictionaryLiteralConvertible
 
 ## Equatable
 
