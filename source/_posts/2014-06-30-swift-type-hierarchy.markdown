@@ -6,7 +6,7 @@ comments: true
 categories: swift swift-internals
 ---
 
-声明： 转载注明我或者 SwiftChina ，方便的情况下请知会本人. [weibo](http://weibo.com/234632333)
+声明： 转载请注明，方便的情况下请知会本人. [weibo](http://weibo.com/234632333)
 
 本文主要介绍 Swift 所有标准库类型的层次结构，及所有标准类型。本文可作为参考手册使用。
 
