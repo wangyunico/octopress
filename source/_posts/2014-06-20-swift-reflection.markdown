@@ -99,10 +99,12 @@ default:
 或者使用 ``is`` 判断：
 
 ```
-if mir is String.Type {
+if mir.valueType is String.Type {
     println("!!!type => String")
 }
 ```
+
+勘误： 这里之前笔误了。遗漏了 ``.valueType`` 。
 
 ``is String`` 判断变量是否是 String 类型，而 ``is String.Type`` 这里用来判断类型是否是 String 类型。
 
