@@ -8,6 +8,13 @@ categories: swift
 
 Just Notes. Keep Updating.
 
+## escaped variable name
+
+```
+let `let` = 1000
+dump(`let`, name: "variable named let")
+```
+
 ## Optimise Parameter
 
 - ``-Onone`` // optimization off, safety checks on
