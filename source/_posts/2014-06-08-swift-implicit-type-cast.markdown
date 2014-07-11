@@ -96,6 +96,8 @@ setColor("red")
 
 隐式类型转换标准： ``@conversion func __conversion<T>() -> T { }`` 可以作为方法写到 struct 里。也可以通过 extension 附加。
 
+**以下内容再 Xcode6-beta3 中不适用** 请参考 [Swift 在 Xcode6-beta3 中的变化](http://andelf.github.io/blog/2014/07/08/swift-beta3-changes/)。
+
 然后就是语言本身中有个细小的问题 微博 onevcat 文章里提到。
 
 nil 是 NilType 的唯一实例（来自Python的同学对这种定义一定不陌生)

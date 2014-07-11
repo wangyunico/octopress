@@ -32,6 +32,8 @@ categories: swift swift-interop
 
 以下内容均适合 Objective-C 。第一部分适合 C 。
 
+**以下内容再 Xcode6-beta3 中不适用** 请参考 [Swift 在 Xcode6-beta3 中的变化](http://andelf.github.io/blog/2014/07/08/swift-beta3-changes/)。
+
 ### for C
 
 #### 可导出的类型定义

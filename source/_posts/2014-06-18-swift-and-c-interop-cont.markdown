@@ -24,6 +24,8 @@ categories: swift swift-interop
 
 从代码看，我认为 Swift 对应 C 的指针时候，存在一个最原始的类型 ``RawPointer``，但是它是内部表示，不可以直接使用。所以略过。但它是基础，可以认为它相当于 ``Word`` 类型（机器字长）。
 
+**以下内容再 Xcode6-beta3 中不适用** 请参考 [Swift 在 Xcode6-beta3 中的变化](http://andelf.github.io/blog/2014/07/08/swift-beta3-changes/)。
+
 #### COpaquePointer
 
 不透明指针。之前我以为它很少会用到，不过现在看来想错了，虽然类型不安全，但是很多场合只能用它。它是直接对应 ``RawPointer`` 的。字长相等。

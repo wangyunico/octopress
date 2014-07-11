@@ -115,6 +115,8 @@ c_println() // 调用
 
 ### 基本类型对应
 
+**以下内容再 Xcode6-beta3 中不适用** 请参考 [Swift 在 Xcode6-beta3 中的变化](http://andelf.github.io/blog/2014/07/08/swift-beta3-changes/)。简言之，不在对应为 C 别名类型，而是直接对应到 Siwft 类型。而指针类型简化为 ``UnsafePointer<T>`` 和 ``ConstUnsafePointer<T>`` 两种， ``COpaquePointer`` 依然存在。另新增了 ``CFunctionPointer<T>``。
+
 - int => CInt
 - char => CChar / CSignedChar
 - char* => CString
